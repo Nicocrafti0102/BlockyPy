@@ -1,0 +1,41 @@
+Comment placer des vertices :
+
+# Liste avec self.x et self.y
+    self.x + self.y, 
+    self.x - self.y, 
+    self.x - self.y, 
+    self.x + self.y, 
+    self.x - self.y, 
+    self.x + self.y
+
+# Liste avec uniquement self.x
+
+    self.x + 
+    self.x -
+    self.x - 
+    self.x + 
+    self.x - 
+    self.x +
+
+# Liste avec uniquement self.y
+
+    self.y - 
+
+#aide !
+
+vertices = [
+    (self.x + 0.2, -0.8, 0.0),  # Coin supérieur droit
+    (self.x - 0.2, -0.8, 0.0),  # Coin supérieur gauche
+    (self.x - 0.2, -0.8 - length, 0.0),  # Coin inférieur gauche
+    (self.x + 0.2, -0.8, 0.0),  # Coin supérieur droit
+    (self.x - 0.2, -0.8 - length, 0.0),  # Coin inférieur gauche
+    (self.x + 0.2, -0.8 - length, 0.0)   # Coin inférieur droit
+]
+
+#Comment ça fonctionne 
+
+Déplacement vers la droite : En ajoutant self.x à chaque coordonnée x, tu peux ajuster la position du mesh. Par exemple, 
+si self.x est 0.01, les vertices seront déplacés légèrement vers la droite.
+
+Déplacement vers la gauche : En utilisant une valeur négative pour self.x, comme -0.1, 
+tu déplaces le mesh vers la gauche de l'écran.

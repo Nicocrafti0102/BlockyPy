@@ -1,0 +1,25 @@
+self.handle_events()
+            self.update()
+            self.render()
+
+            # Envoi des données du joueur au serveur
+            SocketFolder.SocketImportInfos.SendData(
+                player.Name, 
+                player.equiped_weapon, 
+                player.x_pos, 
+                player.y_pos, 
+                player.z_pos, 
+                player.x_cam, 
+                player.y_cam, 
+                player.Score, 
+                player.IsAlive, 
+                player.IsShooting 
+            )
+
+            if SocketMultiPlayer:  # Vérifie si le multijoueur est activé
+                AllData = SocketFolder.SocketImportInfos.GetData()
+                if AllData is not None:
+                    print("Données reçues :", AllData)  # Imprime les données reçues
+                else:
+                    print("Aucune donnée reçue ou erreur dans la récupération des données.")
+                os.system("cls")
