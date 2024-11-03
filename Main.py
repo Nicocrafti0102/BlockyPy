@@ -36,7 +36,7 @@ class VoxelEngine:
         pg.display.gl_set_attribute(pg.GL_CONTEXT_PROFILE_MASK, pg.GL_CONTEXT_PROFILE_CORE)
         pg.display.gl_set_attribute(pg.GL_DEPTH_SIZE, 24)
         pg.display.gl_set_attribute(pg.GL_MULTISAMPLESAMPLES, NUM_SAMPLES)
-        #pg.display.set_mode((0, 0), pg.FULLSCREEN) 
+        #pg.display.set_mode((0, 0), pg.FULLSCREEN)
         pg.display.set_mode((1920, 1080),flags=pg.OPENGL | pg.DOUBLEBUF)
 
         self.ctx = mgl.create_context()

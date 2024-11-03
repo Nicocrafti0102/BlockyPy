@@ -17,9 +17,9 @@ class Scene:
         self.world.update()
         self.voxel_marker.update()
         self.hotbar.update()
-        player_pos = glm.ivec3(int(self.app.player.position.x),int(self.app.player.position.y), int(self.app.player.position.z))
-        voxel_id = self.get_voxel_id(player_pos)
-        
+        player_pos = glm.ivec3(int(self.app.player.position.x), int(self.app.player.position.y), int(self.app.player.position.z))
+        voxel_id, voxel_index, voxel_local_pos, chunk = self.get_voxel_id(player_pos)
+
     def render(self):
         self.world.render()
         self.voxel_marker.render()
@@ -40,6 +40,3 @@ class Scene:
 
             return voxel_id, voxel_index, voxel_local_pos, chunk
         return 0, 0, 0, 0
-        
-        
-        

@@ -14,16 +14,11 @@ IsShooting = False
 equiped_weapon = 2
 
 
-
 class Player(Camera):
     def __init__(self, app, position=PLAYER_POS, yaw=-90, pitch=0):
         self.app = app
         super().__init__(position, yaw, pitch)
-        #self.underwater_mesh = UnderwaterMesh(app)
-        self.underwater = False
-        # if self.app.scene:
-        #     self.chunks = self.app.scene.world.chunks
-        
+
 
     def update(self, pg):
         self.keyboard_controls()
@@ -58,7 +53,7 @@ class Player(Camera):
 
             return voxel_id, voxel_index, voxel_local_pos, chunk
         return 0, 0, 0, 0
-    
+
     def handle_event(self, event, pg):
         voxel_handler = self.app.scene.world.voxel_handler
 
@@ -71,16 +66,13 @@ class Player(Camera):
             if event.button == 3:
                 voxel_handler.place_mode(False)
                 voxel_handler.set_voxel(pg)
-        
+
 
         if event.type == pg.MOUSEWHEEL:
             if event.y == 1:
                 voxel_handler.set_voxel_id(voxel_handler.new_voxel_id + 1)
             if event.y == -1:
                 voxel_handler.set_voxel_id(voxel_handler.new_voxel_id - 1)
-
-        
-
     def mouse_control(self, pg):        
         mouse_dx, mouse_dy = pg.mouse.get_rel()
         global x_cam_brut
@@ -112,9 +104,8 @@ class Player(Camera):
             self.move_right(vel)
         if key_state[pg.K_SPACE]:
             self.jump()
-                
+
 
         #if key_state[pg.K_LSHIFT]:
             #self.move_down(vel)
-
 
