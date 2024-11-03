@@ -2,7 +2,7 @@
 # BlockyPy 
 
 Reproduction d'un minecraft avec des minijeux diverses
-Codé de A à Z grâce à OpenGl, Python et GLSL(OpenGl programming language)
+Codé de A à Z grâce à OpenGl, Python et GLSL(OpenGl shaders language)
 
 ![Logo](https://raw.githubusercontent.com/Nicocrafti0102/BlockyPy/refs/heads/main/icon.ico)
 ## Features
